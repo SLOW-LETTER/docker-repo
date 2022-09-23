@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:latest
+    hostname: postgres
+    container_name: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+    volumes:
+      - postgresVolume:/data/db/postgres
+
+  backend:
+    restart: unless-stopped
+    container_name: backend
+    build:
+      context: ./backend-repo
+    ports:
+      - 8080:8080
+    volumes:
+      - ./backend-repo/:/backend/
+    environment: # springboot의 application-*.yml에 주입 필요한 정보
+      # S3_ACCESSKEY: "${S3_ACCESSKEY}"
+      # S3_SECRETKEY: "${S3_SECRETKEY}"
+      # S3_REGION: "${S3_REGION}"
+      # S3_BUCKET: "${S3_BUCKET}"
+      DB_HOSTNAME: db
+      DB_PORT: 5432
+      DB_DBNAME: postgres
+      DB_USERNAME: postgres
+      DB_PASSWORD: 1234
+      FLASK_DEBUG: 1 #리로딩 설정
+    depends_on:
+      - db
+
+volumes:
+  postgresVolume:
