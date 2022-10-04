@@ -19,7 +19,7 @@
 <h1>:open_file_folder: Tech Stack</h1>
 
 ```
-- Frontend: React, javascript, typescript
+- Frontend: React, Next.js, typescript, Zustand
 - Backend : SpringBoot, java
 - Web Server: Nginx
 - Database: PostgreSQL
@@ -34,9 +34,9 @@
 |Frontend|Backend|Devops|IDE|Vcs|other
 |------|------|------|------|------|------|
 |<div allign="center"><img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=FFFFFF">|<img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=SpringBoot&logoColor=FFFFFF">|<img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=Nginx&logoColor=FFFFFF">|<img src="https://img.shields.io/badge/VSCODE-007ACC?style=for-the-badge&logo=VISUALSTUDIOCODE&logoColor=FFFFFF">|<img src="https://img.shields.io/badge/GIT-F05032?style=for-the-badge&logo=Git&logoColor=FFFFFF">|<img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=FFFFFF">|
-|<img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=FFFFFF">|<img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=OpenJDK&logoColor=white">|<img alt="AWS" src="https://img.shields.io/badge/Amazon AWS-f89400?style=for-the-badge&logo=Amazon AWS&logoColor=000000">|<img src="https://img.shields.io/badge/Intellij-000000?style=for-the-badge&logo=IntellijIDEA&logoColor=FFFFFF">|<img src="https://img.shields.io/badge/GitKraken-179287?style=for-the-badge&logo=GitKraken&logoColor=000000">|<img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=000000">|
+|<img src="https://img.shields.io/badge/NEXT.JS-000000?style=for-the-badge&logo=NEXT.JS&logoColor=FFFFFF">|<img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=OpenJDK&logoColor=white">|<img alt="AWS" src="https://img.shields.io/badge/Amazon AWS-f89400?style=for-the-badge&logo=Amazon AWS&logoColor=000000">|<img src="https://img.shields.io/badge/Intellij-000000?style=for-the-badge&logo=IntellijIDEA&logoColor=FFFFFF">|<img src="https://img.shields.io/badge/GitKraken-179287?style=for-the-badge&logo=GitKraken&logoColor=000000">|<img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=000000">|
 |<img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=Typescript&logoColor=FFFFFF">|<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=PostgreSQL&logoColor=FFFFFF">|<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=Docker&logoColor=FFFFFF">||<img src="https://img.shields.io/badge/GITHUB-black?style=for-the-badge&logo=GITHUB&logoColor=FFFFFF">|<img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=Grafana&logoColor=000000">|
-||||||<img src="https://img.shields.io/badge/NOTION-000000?style=for-the-badge&logo=NOTION&logoColor=FFFFFF">|
+|<img src="https://img.shields.io/badge/zustand-000000?style=for-the-badge&logo=React&logoColor=FFFFFF">|||||<img src="https://img.shields.io/badge/NOTION-000000?style=for-the-badge&logo=NOTION&logoColor=FFFFFF">|
 ||||||<img src="https://img.shields.io/badge/SLACK-4A154B?style=for-the-badge&logo=Slack&logoColor=000000"></div>|
 
 
