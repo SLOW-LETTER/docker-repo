@@ -1,7 +1,8 @@
 # SlowLetter
+### [한국어](https://github.com/SLOW-LETTER/docker-repo/blob/develop/README.ko.md)  
 <hr/>
 <h1>:bulb: Introduction</h1>
-[한국어](https://github.com/SLOW-LETTER/docker-repo/blob/develop/README.ko.md)
+
 <p>Before the real-time messenger came to the world, do you not forget the memories of waiting for the pen-pal response all night? Then use the SlowLetter to bring back the memories!
 
 Users can feel the old emotions again through sending and receiving the letters from the web like if they were real-life handwritten letters.
