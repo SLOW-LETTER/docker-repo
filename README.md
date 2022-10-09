@@ -1,24 +1,27 @@
 # SlowLetter
 <hr/>
-<h1>:bulb: 주제 소개</h1>
-<p>실시간 메신저가 등장하기 전, 밤새 펜팔 답장을 기다려보신 추억을 잊지 못하고 계신가요?
-그럼 이 서비스를 통해 추억을 다시 되살려보세요!
+<h1>:bulb: Introduction</h1>
+[한국어](https://github.com/SLOW-LETTER/docker-repo/blob/develop/README.ko.md)
+<p>Before the real-time messenger came to the world, do you not forget the memories of waiting for the pen-pal response all night? Then use the SlowLetter to bring back the memories!
 
-사용자는 웹에서 보내는 편지를 실제 손편지처럼 주고받게 되는 경험을 통해 예전의 감성을 다시 느낄 수 있습니다.
+Users can feel the old emotions again through sending and receiving the letters from the web like if they were real-life handwritten letters.
 
-서비스 이용 방법은 다음과 같습니다.
+
+Service manual
 <br>
-1. 먼저 홈페이지에서 회원가입/로그인을 진행합니다. 
-2. 편지 보내기 버튼을 클릭하여 편지 작성 페이지로 이동합니다. 
-3. 첫 번째로 원하는 편지지 템플릿을 선택한 후에 편지를 작성하여 텍스트를 보내거나 원할 경우 파일까지 첨부를 완료합니다. 
-4. 마지막으로 전송하는 데 필요한 추가 정보 폼 작성을 완료하고 편지 보내기 버튼을 클릭하면 끝입니다.
+1. Visit the website and sign up/sign in.
+2. Click the “Send a letter” button to go to the compose a letter page.
+3. Choose the stationery template you want and write a letter to send your text or, if desired, attach the attachment.
+4. Complete the additional info then click “Send” button. It’s all done!
+
+
   
 <br>
-저희 서비스를 통해 즐거운 경험을 하시면 좋겠습니다. 감사합니다!
+We hope you have a delightful experience with our service. Thanks for reading! 
 </p>
-<h1>:office: 소프트웨어 아키텍쳐</h1>
+<h1>:office: Software Architecture</h1>
 <img width="803" alt="Screen Shot 2022-09-30 at 8 00 33 PM" src="https://user-images.githubusercontent.com/93856060/193256036-39ff0ea3-97af-434e-a8c3-8e4d83ca93d9.png">
-<h1>기술스택</h1>
+<h1>Tech Stack</h1>
 <h1>:open_file_folder: Tech Stack</h1>
 
 ```
@@ -49,7 +52,7 @@
 
 
 <hr/>
-<h1>:busts_in_silhouette: 팀원 역할</h1>
+<h1>:busts_in_silhouette: Member Role</h1>
 
 |Name|용준현|한정욱|원우연|박수현|김현진|
 |---|---|---|---|---|---|
