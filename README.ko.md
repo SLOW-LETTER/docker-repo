@@ -1,5 +1,5 @@
 # SlowLetter
-### [english](https://github.com/SLOW-LETTER/docker-repo/blob/develop/README.md)  
+### [English](https://github.com/SLOW-LETTER/docker-repo/blob/develop/README.md)  
 <hr/>
 <h1>:bulb: 주제 소개</h1>
 <p>실시간 메신저가 등장하기 전, 밤새 펜팔 답장을 기다려보신 추억을 잊지 못하고 계신가요?
