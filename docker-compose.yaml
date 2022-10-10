@@ -58,10 +58,24 @@ services:
       - grafana_data:/var/lib/grafana
       - ./datasource.yml/:/etc/grafana/provisioning/datasource.yml
     ports:
-      - 3000:3000
+      - 3333:3333
     restart: always
     depends_on:
       - prometheus
+
+  next:
+    container_name: "next"
+    restart: "on-failure"
+    build:
+      context: ./front-rep/slow-letter
+      dockerfile: Dockerfile
+    volumes:
+      # hot reload를 위해 mount
+      - "./front-rep/slow-letter:/usr/src/next"
+      - "/usr/src/next/node_modules"
+      - "/usr/src/next/.next" 
+    ports:
+      - "3000:3000"
 
 volumes:
   postgresVolume:
