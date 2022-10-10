@@ -36,6 +36,13 @@ services:
     depends_on:
       - db
 
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:8080
+    depends_on:
+      - backend
+
   prometheus:
     container_name: prometheus
     image: prom/prometheus:v2.2.1
@@ -63,20 +70,7 @@ services:
     depends_on:
       - prometheus
 
-  next:
-    container_name: "next"
-    restart: "on-failure"
-    build:
-      context: ./front-rep/slow-letter
-      dockerfile: Dockerfile
-    volumes:
-      # hot reload를 위해 mount
-      - "./front-rep/slow-letter:/usr/src/next"
-      - "/usr/src/next/node_modules"
-      - "/usr/src/next/.next" 
-    ports:
-      - "3000:3000"
 
 volumes:
   postgresVolume:
-  grafana_data: 
+  grafana_data:
