@@ -1,18 +1,18 @@
 version: "3"
 
 services:
-  db:
-    image: postgres:latest
-    hostname: postgres
-    container_name: postgres
-    restart: always
-    ports:
-      - 5432:5432
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=1234
-    volumes:
-      - postgresVolume:/data/db/postgres
+  # db:
+  #   image: postgres:latest
+  #   hostname: postgres
+  #   container_name: postgres
+  #   restart: always
+  #   ports:
+  #     - 5432:5432
+  #   environment:
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=1234
+  #   volumes:
+  #     - postgresVolume:/data/db/postgres
 
   backend:
     restart: unless-stopped
@@ -28,13 +28,13 @@ services:
       # S3_SECRETKEY: "${S3_SECRETKEY}"
       # S3_REGION: "${S3_REGION}"
       # S3_BUCKET: "${S3_BUCKET}"
-      DB_HOSTNAME: db
+      DB_HOSTNAME: database-1.cm2mmykur2g9.us-west-2.rds.amazonaws.com
       DB_PORT: 5432
       DB_DBNAME: postgres
       DB_USERNAME: postgres
-      DB_PASSWORD: 1234
-    depends_on:
-      - db
+      DB_PASSWORD: weonuyeon21
+    # depends_on:
+    #   - db
 
   nginx:
     build: ./nginx
@@ -69,7 +69,6 @@ services:
     restart: always
     depends_on:
       - prometheus
-
 
 volumes:
   postgresVolume:
