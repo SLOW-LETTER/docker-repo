@@ -14,6 +14,21 @@ services:
   #   volumes:
   #     - postgresVolume:/data/db/postgres
 
+  front:
+    container_name: front
+    restart: on-failure
+    build:
+      context: ./frontend-repo/slow-letter
+      dockerfile: Dockerfile
+    volumes:
+      # hot reload를 위해 mount
+      - ./frontend-repo/slow-letter:/usr/src/next
+      - /usr/src/next/node_modules
+      - /usr/src/next/.next
+      - build_folder:/frontend/build
+    ports:
+      - 3000:3000
+
   backend:
     restart: unless-stopped
     container_name: backend
@@ -28,48 +43,62 @@ services:
       # S3_SECRETKEY: "${S3_SECRETKEY}"
       # S3_REGION: "${S3_REGION}"
       # S3_BUCKET: "${S3_BUCKET}"
-      DB_HOSTNAME: database-1.cm2mmykur2g9.us-west-2.rds.amazonaws.com
-      DB_PORT: 5432
-      DB_DBNAME: postgres
-      DB_USERNAME: postgres
-      DB_PASSWORD: weonuyeon21
+      DB_HOSTNAME: ${DB_HOSTNAME}
+      DB_PORT: ${DB_PORT}
+      DB_DBNAME: ${DB_DBNAME}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
     # depends_on:
     #   - db
 
   nginx:
     build: ./nginx
     ports:
-      - 80:8080
+      - 80:80
+    volumes:
+      - build_folder:/var/www/frontend
     depends_on:
       - backend
+      - front
 
-  prometheus:
-    container_name: prometheus
-    image: prom/prometheus:v2.2.1
-    ports:
-      - 9090:9090
-    volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-    environment:
-      - PROMETHEUS_COMMON_DISABLE_HTTP2
-    depends_on:
-      - backend
+  # nginx:
+  #   build: ./nginx
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - build_folder:/var/www/frontend
+  #   depends_on:
+  #     - backend
+  #     - front
 
-  grafana:
-    container_name: grafana
-    image: grafana/grafana:latest
-    # user: "472"
-    # environment:
-    #   - GF_INSTALL_PLUGINS=alexanderzobnin-zabbix-app,grafana-clock-panel,grafana-simple-json-datasource
-    volumes:
-      - grafana_data:/var/lib/grafana
-      - ./datasource.yml/:/etc/grafana/provisioning/datasource.yml
-    ports:
-      - 3333:3333
-    restart: always
-    depends_on:
-      - prometheus
+  # prometheus:
+  #   container_name: prometheus
+  #   image: prom/prometheus:v2.2.1
+  #   ports:
+  #     - 9090:9090
+  #   volumes:
+  #     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+  #   environment:
+  #     - PROMETHEUS_COMMON_DISABLE_HTTP2
+  #   depends_on:
+  #     - backend
+
+  # grafana:
+  #   container_name: grafana
+  #   image: grafana/grafana:latest
+  #   # user: "472"
+  #   # environment:
+  #   #   - GF_INSTALL_PLUGINS=alexanderzobnin-zabbix-app,grafana-clock-panel,grafana-simple-json-datasource
+  #   volumes:
+  #     - grafana_data:/var/lib/grafana
+  #     - ./datasource.yml/:/etc/grafana/provisioning/datasource.yml
+  #   ports:
+  #     - 3333:3000
+  #   restart: always
+  #   depends_on:
+  #     - prometheus
 
 volumes:
-  postgresVolume:
-  grafana_data:
+  # postgresVolume:
+  # grafana_data:
+  build_folder: null
